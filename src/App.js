@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import{link, Routes, Route} from 'react-router-dom';
+import Home from './components/Home';
+import Input from './components/Input';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Routing</h2>
+      <hr/>
+      {/* Theater stage where Componenets will load based on their route */}
+      <Routes>
+        
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/:input' element={<Input/>}/>
+        <Route path='/:input/:textColor/:bgColor' element={<Input/>}/>
+        
+        
+      </Routes>
     </div>
   );
 }
